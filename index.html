@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA (Pure JS)</title>
+    <link rel="shortcut icon" href="./TSFav.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="login-form col-md-4 offset-md-4 pt-5">
+            <form action="http://localhost:7777/users/login" method="POST">
+                <div class="row">
+                    <div class="col-md">
+                        <div class="form-group">
+                            <label for="author_name">Your name *</label>
+                            <input class="form-control" name="author_name" placeholder="Write your name here" />
+                            <p class="invalid-feedback">
+                                Name is required
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="author_email">Your email *</label>
+                            <input class="form-control" name="author_email" placeholder="Write your email here" />
+                            <p class="invalid-feedback">
+                                This email is not Valid
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block">Login</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="content-app d-none">
+            <div class="normal-user-content">
+                <div class="my-5">
+                    <form id="videoRequestForm" novalidate>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="topic_title">Topic *</label>
+                                    <input class="form-control" name="topic_title"
+                                        placeholder="Write your suggested topic here" />
+                                    <p class="invalid-feedback">
+                                        This Field is required
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="target_level">Target level</label>
+                                    <select class="form-control" name="target_level" placeholder="Write your name here">
+                                        <option value="begineer">Beginner</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="topic_details">More details *</label>
+                                    <textarea class="form-control" name="topic_details"
+                                        placeholder="Write your topic in more details here"></textarea>
+                                    <p class="invalid-feedback">
+                                        This Field is required
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-group">
+                                    <label for="expected_result">Expected results</label>
+                                    <textarea class="form-control" name="expected_result"
+                                        placeholder="Write what do you expect after watching this video"></textarea>
+                                    <p class="invalid-feedback">
+                                        This Field is required
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success mt-3">
+                            Send video request
+                        </button>
+                    </form>
+                </div>
+                <hr />
+                <h1 class="mb-4">List of requested videos</h1>
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active" id="sort_by_new">
+                            <input type="radio" name="options" value="newFirst">New First
+                        </label>
+                        <label class="btn btn-primary" id="sort_by_top">
+                            <input type="radio" name="options" value="topVotedFirst">Top Voted First
+                        </label>
+                    </div>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-primary active" id="filter_by_all">
+                            <input type="radio" name="options" value="all" checked/> All
+                        </label>
+                        <label class="btn btn-primary" id="filter_by_new">
+                            <input type="radio" name="options" value="all" /> New
+                        </label>
+                        <label class="btn btn-primary" id="filter_by_planned">
+                            <input type="radio" name="options" value="all" /> Planned
+                        </label>
+                        <label class="btn btn-primary" id="filter_by_done">
+                            <input type="radio" name="options" value="all" /> Done
+                        </label>
+                    </div>
+                    <div>
+                        <input type="search" class="form-control" id="search_box" placeholder="Type your search term">
+                    </div>
+                </div>
+            </div>
+            <div id="listOfRequests"></div>
+        </div>
+    </div>
+    <script src="./client/script.js"></script>
+</body>
+
+</html>
