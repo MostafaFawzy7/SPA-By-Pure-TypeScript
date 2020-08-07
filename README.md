@@ -1,6 +1,6 @@
 # My First TypeScript App
 
-> Hi all, this is My First TypeScript App, it's a single page app with pure TypeScript with React or any JS frameworks!
+> Hi all, this is My First TypeScript App, it's a single page app with pure TypeScript without React or any JS frameworks!
 
 In this repo you can find the Implementation of Server-Side & Client-Side.
 
